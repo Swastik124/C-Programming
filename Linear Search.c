@@ -1,5 +1,5 @@
 #include<stdio.h>
-cation of the %d is %d(index)\n",n,loc);
+
 void find(int [],int,int,int);
 void display(int [],int,int,int);
 void main()
@@ -38,4 +38,5 @@ void display(int a[],int s,int n,int x)
 	{
 		printf("%d\t",a[i]);
 	}
-}i
+	printf("Location of the %d is %d(index)\n",n,loc);
+};
