@@ -1,10 +1,10 @@
 #include<stdio.h>
-
-void find(int [],int,int,int);
-void display(int [],int,int,int);
-void main()
+int count=0;
+void find(int [],int,int);
+void display(int [],int);
+int main()
 {
-	int i,a[100],s,n,x;
+	int i,a[100],s,n;
 	printf("Enter the size= ");
 	scanf("%d",&s);
 	printf("Enter the array= ");
@@ -12,31 +12,35 @@ void main()
 	{
 		scanf("%d",&a[i]);
 	}
-	printf("Enter the element you want to insert= ");
+	display(a,s);
+	printf("Enter the element you want to search= \n");
 	scanf("%d",&n);
-	printf("Enter the position(index) where you want to insert= ");
-	scanf("%d",&x);
-	find(a,s,n,x);
-	display(a,s,n,x);
-	printf("\n");
+	find(a,s,n);
+	if(count==1)
+		printf("Element Successfully found in Array\n");
+	else
+	{
+		printf("Element is not present in the Array\n");
+	}
 }
-void find(int a[],int s,int n, int x)
+void find(int a[],int s,int n)
 {
 	int i;
 	for(i=0;i<s;i++)
 	{
-		if(i==x)
+		if(a[i]==n)
 		{
-			a[i]=n;
+			printf("Location of the %d is %d(index)\n",n,i);
+			count ++;
 		}
 	}
 }
-void display(int a[],int s,int n,int x)
+void display(int a[],int s)
 {
 	int i;
 	for(i=0;i<s;i++)
 	{
 		printf("%d\t",a[i]);
 	}
-	printf("Location of the %d is %d(index)\n",n,loc);
-};
+	printf("\n");
+}
